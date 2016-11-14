@@ -109,7 +109,7 @@ SwiftDate是开源的类库并托管在GitHub上面。
 
 ## Authors & License
 
-SwiftDate是由[Daniele Margutti](http://www.danielemargutti.com/)，其中项目的一个主要贡献者是[Jeroen Houtzager](https://github.com/Hout)。
+SwiftDate是由[Daniele Margutti](http://www.danielemargutti.com/)创建并维护，其中项目的一个主要贡献者是[Jeroen Houtzager](https://github.com/Hout)。
 
 欢迎为开源项目作出贡献！
 
