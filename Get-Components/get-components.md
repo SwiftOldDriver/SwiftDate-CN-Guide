@@ -313,6 +313,7 @@
 `public func startOf(component: Calendar.Component) -> Date`
 ### 参数
 * `component`: 时间单位组件作为参考
+
 ### 说明
 这个值将会在其使用的日历和时区的环境中解释；如果调用者是`DateInRegion`，系统环境将会使用相关的`.region`来定义，如果调用者是普通`Date`，系统环境将会使用默认值`Date.defaultRegion`来定义。
 
