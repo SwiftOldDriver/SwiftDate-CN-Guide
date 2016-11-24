@@ -11,7 +11,7 @@
 此外，还可以通过调用`Date`的静态方法`.setDefaultRegion()`改变默认的区域。
 
 
-## era（世纪）
+## era
 返回era单位的数值
 ### 声明
 `public var era: Int`
@@ -19,7 +19,7 @@
 ### 说明
 这个值将会在其使用的日历和时区的环境中解释；如果调用者是`DateInRegion`，系统环境将会使用相关的`.region`来定义，如果调用者是普通`Date`，系统环境将会使用默认值`Date.defaultRegion`来定义。
 
-## year（年）
+## year
 返回years单位的数值
 ### 声明
 `public var year: Int`
@@ -27,7 +27,7 @@
 这个值将会在其使用的日历和时区的环境中解释；如果调用者是`DateInRegion`，系统环境将会使用相关的`.region`来定义，如果调用者是普通`Date`，系统环境将会使用默认值`Date.defaultRegion`来定义。
 
 
-## month（月）
+## month
 返回months单位的数值
 ### 声明
 `public var month: Int`
@@ -35,7 +35,7 @@
 这个值将会在其使用的日历和时区的环境中解释；如果调用者是`DateInRegion`，系统环境将会使用相关的`.region`来定义，如果调用者是普通`Date`，系统环境将会使用默认值`Date.defaultRegion`来定义。
 
 
-## day（日）
+## day
 返回days单位的数值
 ### 声明
 `public var day: Int`
@@ -43,7 +43,7 @@
 这个值将会在其使用的日历和时区的环境中解释；如果调用者是`DateInRegion`，系统环境将会使用相关的`.region`来定义，如果调用者是普通`Date`，系统环境将会使用默认值`Date.defaultRegion`来定义。
 
 
-## hour（小时）
+## hour
 返回hour单位的数值
 ### 声明
 `public var hour: Int`
@@ -51,7 +51,7 @@
 这个值将会在其使用的日历和时区的环境中解释；如果调用者是`DateInRegion`，系统环境将会使用相关的`.region`来定义，如果调用者是普通`Date`，系统环境将会使用默认值`Date.defaultRegion`来定义。
 
 
-## nearestHour（最近的小时）
+## nearestHour
 根据四舍五入的方法取出某个日期的最近小时。
 ### 声明
 `public var nearestHour: Int`
@@ -60,21 +60,21 @@
 这个值将会在其使用的日历和时区的环境中解释；如果调用者是`DateInRegion`，系统环境将会使用相关的`.region`来定义，如果调用者是普通`Date`，系统环境将会使用默认值`Date.defaultRegion`来定义。
 
 
-## minute（分）
+## minute
 返回minute单位的数值
 ### 声明
 `public var minute: Int`
 ### 说明
 这个值将会在其使用的日历和时区的环境中解释；如果调用者是`DateInRegion`，系统环境将会使用相关的`.region`来定义，如果调用者是普通`Date`，系统环境将会使用默认值`Date.defaultRegion`来定义。
 
-## second（秒）
+## second
 返回second单位的数值
 ### 声明
 `public var second: Int`
 ### 说明
 这个值将会在其使用的日历和时区的环境中解释；如果调用者是`DateInRegion`，系统环境将会使用相关的`.region`来定义，如果调用者是普通`Date`，系统环境将会使用默认值`Date.defaultRegion`来定义。
 
-## nanosecond（纳秒）
+## nanosecond
 返回nanosecond单位的数值
 ### 声明
 `public var nanosecond: Int`
@@ -95,7 +95,7 @@
 ### 说明
 这个值将会在其使用的日历和时区的环境中解释；如果调用者是`DateInRegion`，系统环境将会使用相关的`.region`来定义，如果调用者是普通`Date`，系统环境将会使用默认值`Date.defaultRegion`来定义。
 
-## weekday（工作日）
+## weekday
 返回工作日单位的数值。
 
 工作日单位的数值是1-n，其中n是一个星期中的天数。
@@ -125,14 +125,14 @@
 ### 说明
 这个值将会在其使用的日历和时区的环境中解释；如果调用者是`DateInRegion`，系统环境将会使用相关的`.region`来定义，如果调用者是普通`Date`，系统环境将会使用默认值`Date.defaultRegion`来定义。
 
-## monthDays（月份天数）
+## monthDays
 当前地区日历和语言环境中，当前月份的天数
 ### 声明
 `public var monthDays: Int`
 ### 说明
 这个值将会在其使用的日历和时区的环境中解释；如果调用者是`DateInRegion`，系统环境将会使用相关的`.region`来定义，如果调用者是普通`Date`，系统环境将会使用默认值`Date.defaultRegion`来定义。
 
-## quarter（季度）
+## quarter
 返回季度单位的数值
 ### 声明
 `public var quarter: Int`
