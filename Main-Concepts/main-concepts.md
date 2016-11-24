@@ -20,8 +20,9 @@ SwiftDate为了提供完整的时间和日期管理的功能，引入了两个�
 第一个对象是一个结构体(struct)，称为Region：region，正如命名的那样，是地理学地区的一个命名，其中包含三个不同的特征：
 
 #### 这或许是不太重要的标注说明：
-> GMT(Greenwich Mean Time)：指格林威治标准时间；
-> PST(Pacific Standard Time)：指太平洋标准时间；
+> `GMT(Greenwich Mean Time)`：指格林威治标准时间；
+
+> `PST(Pacific Standard Time)`：指太平洋标准时间；
 
 * `TimeZone`: 用来定义时区对象。时区对象代表地域性的地区。也就是说，这些对象是用来命名地区的，时区对象还可以针对于GMT和PST时间的偏移量进行加减操作。 
 
