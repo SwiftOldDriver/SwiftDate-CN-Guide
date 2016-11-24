@@ -2,7 +2,7 @@
 
 ## 概况
 
-很开心地告诉你，你可以轻松的驾驭SwiftDate里面的时间组件。`DateInRegion`和`Date`都实现了同一套属性和函数来进行时间日期的管理。
+很开心地告诉你，你可以轻松的驾驭SwiftDate里面的时间组件。`DateInRegion`和`Date`都实现了一套属性和函数来进行时间日期的管理。
 
 这个或许不重要但是一定要记住！当使用`Date`对象的时候，需要在`.defaultRegion`中进行`Date`的实例化。
 
