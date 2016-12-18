@@ -1,0 +1,77 @@
+#SwiftDare 中文版说明文档 - Foundation Extensions - 7
+
+
+##概览
+---
+众所周知， Swift 的一大重要特性就是类型安全，这意味着你不能进行与声明类型不匹配的操作。换言之，在类型安全的规则下，你可以将一个数除以 0 -- 这种操作不是类型错误 -- 但是不能对一个字符串进行算术运算，除非你先进行类型转换。
+在 Swift 3 中，为了创造一个更加 “Swift - Like” 的环境，Foundation 框架中的许多类现已实现类型安全。
+SwiftDate 中介绍了 3 个新的美剧，他们可以让你更安全的表述时区（TimeZone），日历类型（Calendar）和日期的地方表述形式（Locale）。
+
+
+##日历的快捷方式： CalendarName
+---
+`CalendarName` 是一个定义所有现有日历种类的枚举。
+`CalendarName` 唯一的属性是 `.calendar`：调用它你会得到合适的日历实例
+
+**例如：**
+```swift
+let islamic = CalendarName.islamicCivil.calendar // get a new islamic Calendar object
+let gregorian_name = CalendarName.gregorian // this is a CalendarName's set to Gregorian calendar
+let gregorian_calendar = gregorian_name.calendar // ... and now we get the Calendar instance!
+let currentDevice = CalendarName.current.calendar // current device's Calendar
+let currentDevice = CalendarName.currentAutoUpdating.calendar // current device's Calendar which update itself when geographic zone changes
+```
+
+##时区的快捷方式：TimeZoneName
+---
+`TimeZoneName` 是一个表达预设时区的枚举。
+`TimeZoneName` 唯一的属性是 `.timezone` ：调用它你会得到合适的时区实例
+
+**例如：**
+```swift
+let romeTzName = TimeZoneName.europeRome // get a TimeZoneName enum with rome set as geographic region
+let romeTimeZone = romeTzName.timeZone // get a TimeZone object
+let osloTimeZone = TimeZoneName.europeOslo.timeZone // get a TimeZone instance set to Oslo
+		
+let currentDeviceTZ = TimeZoneName.current.timeZone // get a TimeZone instance with the current device's geographic tz
+let currentAutoUpdateTZ = TimeZoneName.currentAutoUpdating.timeZone // get a TimeZone instance which auto-update itself based upon current tz region of the device
+```
+
+##TimeInterval (时间间隔)
+---
+`TimeInterval` 是衡量秒数多少的一个别名。
+SwiftDate 为此提供了两种额外的方法：
++ `.in(components: [Calendar.Component], of: CalendarName)` 这个方法允许你使用其他时间组件单位来表述时间间隔
++ `.string(options: ComponentsFormatterOptions)`  这个方法允许你由时间组件的字符串获取时间组件单位，然后以字符串中的时间组件单位来表述时间间隔
+例如
+
+**例如：**
+```swift
+let ts: TimeInterval = 40500
+print(ts.in([.minute,.hour])) // .minute=15, .hour=11
+print(ts.in(.minute)) // 675 (minutes)
+// Print with allowed units auto and components style
+print(try! ts.string(options: nil)) // 11:15:00
+// Print with locale in full format
+var options = ComponentsFormatterOptions(style: .full)
+options.locale = LocaleName.italianItaly.locale
+print(try! ts.string(options: options)) // 11 ore, 15 minuti e 0 secondi
+```
+
+##时间组件
+---
+在 SwiftDate 中 `DateComponents` 有多个 `Extension`
+首先所有的 `DateComponents` 对每一种时间单位都有对应的属性；这使得 SwiftDate 可以在时间和时间组件之间进行数学运算： `let newDate = beforeDate + 2.days - 4.months + 3.hours` 
+此外 SwiftDate 还提供以下方法：
+
+**在现有时间组件上加上另一个时间，以获取一个新的时间实例**
++ `.from(date: Date, in region: Region? = nil) `function: Create a new Date in absolute time from a specific date by adding self components
++ `.from(dateInRegion: DateInRegion)` -> DateInRegion? function: Create a new DateInRegion from another DateInRegion by adding self components
+
+**在现有时间组件上减去另一个时间，以获取一个新的时间实例**
++ `.ago(from date: Date, in region: Region? = nil) -> Date?` function: Create a new DateInRegion from another DateInRegion by subtracting self components
++ `.ago(fromDateInRegion date: DateInRegion) -> DateInRegion?` function: Create a new DateInRegion from another DateInRegion by subtracting self components
+
+**在现有时间组件上加上或减去现在时刻对应的时间，以得到一个新的时间实例**
++ `.fromNow(in region: Region? = nil) -> Date?`function: Create a new Date in absolute time from current date by adding self components
++ `.ago(in region: Region? = nil) -> Date?` function: Create a new DateInRegion from current by subtracting self components
